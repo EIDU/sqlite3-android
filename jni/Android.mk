@@ -11,7 +11,7 @@ LOCAL_MODULE_FILENAME   := libsqlite3
 LOCAL_SRC_FILES         := ../build/sqlite3.c
 LOCAL_C_INCLUDES        := ../build
 LOCAL_EXPORT_C_INCLUDES := ../build
-LOCAL_CFLAGS            := -DSQLITE_THREADSAFE=1
+iLOCAL_CFLAGS            := -DSQLITE_THREADSAFE=2 -DSQLITE_ENABLE_JSON1=1 -DSQLITE_ENABLE_FTS5=1 -O2
 include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -21,7 +21,7 @@ LOCAL_STATIC_LIBRARIES  := libsqlite3-a
 LOCAL_SRC_FILES         := ../build/shell.c ../build/sqlite3.c
 LOCAL_C_INCLUDES        := ../build
 LOCAL_EXPORT_C_INCLUDES := ../build
-LOCAL_CFLAGS            := -DSQLITE_THREADSAFE=1 -fPIE
+LOCAL_CFLAGS            := -DSQLITE_THREADSAFE=2 -fPIE -DSQLITE_ENABLE_JSON1=1 -DSQLITE_ENABLE_FTS5=1 -O2
 LOCAL_LDFLAGS           := -fPIE -pie
 include $(BUILD_EXECUTABLE)
 
@@ -36,7 +36,7 @@ LOCAL_MODULE_FILENAME   := libsqlite3
 LOCAL_SRC_FILES         := ../build/sqlite3.c
 LOCAL_C_INCLUDES        := ../build
 LOCAL_EXPORT_C_INCLUDES := ../build
-LOCAL_CFLAGS            := -DSQLITE_THREADSAFE=1
+LOCAL_CFLAGS            := -DSQLITE_THREADSAFE=2 -DSQLITE_ENABLE_JSON1=1 -DSQLITE_ENABLE_FTS5=1 -O2
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -46,6 +46,6 @@ LOCAL_SHARED_LIBRARIES  := libsqlite3-so
 LOCAL_SRC_FILES         := ../build/shell.c ../build/sqlite3.c
 LOCAL_C_INCLUDES        := ../build
 LOCAL_EXPORT_C_INCLUDES := ../build
-LOCAL_CFLAGS            := -DSQLITE_THREADSAFE=1 -fPIE
+LOCAL_CFLAGS            := -DSQLITE_THREADSAFE=2 -fPIE -DSQLITE_ENABLE_JSON1=1 -DSQLITE_ENABLE_FTS5=1 -O2
 LOCAL_LDFLAGS           := -fPIE -pie
 include $(BUILD_EXECUTABLE)
